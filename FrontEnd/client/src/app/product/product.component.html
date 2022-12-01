@@ -1,0 +1,25 @@
+<app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm"></app-input>
+<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
+
+
+
+<table>
+  <th>ID</th>
+  <th>Produto</th>
+  <th>Grupo</th> 
+  <th>Sub Grupo</th>
+  <th>Coleção</th>
+  <th>Preço</th>
+  <th>Editar</th>
+  <th>Excluir</th>
+    <tr *ngFor="let product of products">
+      <td>{{product.id}} </td>
+      <td>{{product.description}} </td>
+      <td>{{product.group_description}} </td>
+      <td>{{product.subgroup_description}}</td>
+      <td>{{product.collection_description}}</td>
+      <td>R$ {{product.price}} </td>
+      <td><button class="BTedit" (click)="openModalEdit(product)"><mat-icon>edit</mat-icon>	</button></td>
+      <td><button class="BTdelet"(click)="deleteSubGroup(product.id)"><mat-icon>delete</mat-icon></button></td>
+    </tr>
+</table>

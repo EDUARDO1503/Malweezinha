@@ -1,0 +1,18 @@
+<app-input [label]="'Pesquisa'"(input)="list()" [(ngModel)]="filterTerm"></app-input>
+<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
+<table>  
+  <th>ID</th>
+  <th>Nome</th> 
+  <th>CNPJ</th>
+  <th>Editar</th>
+  <th>Excluir</th>
+    <tr *ngFor="let client of clients">
+      <td>{{client.id}} </td>
+      <td>{{client.nameFantasy}} </td>
+      <td>{{client.CNPJ}} </td>
+      <td><button  class="BTedit" (click)="openModalEdit(client)"><mat-icon>edit</mat-icon>	</button></td>
+      <td><button class="BTdelet"(click)="deleteGroup(client.id)"><mat-icon>delete</mat-icon></button></td>
+    </tr>
+</table>
+
+

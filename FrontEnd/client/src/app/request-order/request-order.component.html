@@ -1,0 +1,26 @@
+<app-basicmodal [title]="'Novo Pedido'" >
+    <div class="info">
+        <td>ID: </td>
+        <td class="dateE">DATA EMISSÃO: </td>
+        <td class="dateO">DATA ENTREGA: </td>
+        <td class="dateV">VALOR TOTAL: </td>
+    </div>
+    <button class="adicionar" (click)="openModal()">+</button>
+    <app-dropdown  [title]="'Endereços'" ></app-dropdown>  
+        <div>
+            <input class="cliente" placeholder="Cliente"> 
+        </div>
+        <table>
+            <th>Codigo</th>
+            <th>Nome</th> 
+            <th>Quantidade</th>
+            <th>Valor</th>
+            <th>Desconto</th>
+              <tr *ngFor="let order of orders">
+                <td>{{order.id}} </td>
+                <td>{{order.description}} </td>
+                <td><button  class="BTedit" ><mat-icon>edit</mat-icon></button></td>
+                <td> <button class="BTdelet"><mat-icon>delete</mat-icon></button></td>
+              </tr>
+          </table>
+</app-basicmodal>

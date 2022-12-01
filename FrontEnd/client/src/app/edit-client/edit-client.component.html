@@ -1,0 +1,37 @@
+<app-basicmodal>
+<mat-tab-group dynamicHeight>
+        <mat-tab  label="Editar Cliente">
+            <app-input [label]="'Novo Nome Fantasia'"  [(ngModel)]="nameFantasy"></app-input>
+            <app-input [label]="'Nova Razão Social'"  [(ngModel)]="socialReason"></app-input>
+            <app-input [label]="'Novo CNPJ'"  [(ngModel)]="CNPJ"></app-input>
+            <app-input [label]="'Nova Data de Inicio'"  [(ngModel)]="clientSince"></app-input>
+       </mat-tab>
+
+       <!----------------------------------------------------------------------------------------------------------- -->
+        <mat-tab label="Endereços"> 
+          <app-input class="inputs"[label]="'Pesquisa'"[(ngModel)]="filterTerm"></app-input>
+  <table>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>Rua</b></td>
+      <td><b>Cidade</b></td>
+      <td><b>Estado</b></td>
+      <td><b>Numero</b></td>
+      <td><b>CEP</b></td>
+      <td><b>fkclient</b></td>
+      </tr>
+
+      <tr *ngFor="let client of clients">
+        <td>{{client.id}} </td>
+        <td>{{client.street}} </td>
+        <td>{{client.city}} </td>
+        <td>{{client.state}} </td>
+        <td>{{client.number}} </td>
+        <td>{{client.cep}} </td>
+        <td>{{client.fkclient}} </td>
+        <td><button  class="BTedit" (click)="openModalEdit(adress)"><mat-icon>edit</mat-icon>	</button></td>
+      </tr>
+</table>
+      </mat-tab>
+      </mat-tab-group>
+</app-basicmodal>

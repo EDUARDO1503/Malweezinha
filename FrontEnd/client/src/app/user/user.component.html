@@ -1,0 +1,14 @@
+<app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm"></app-input>
+<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
+<table>
+  <th>ID</th>
+  <th>Usuario</th> 
+  <th>Editar</th>
+  <th>Excluir</th>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}} </td>
+      <td>{{user.name}} </td>
+      <td><button  class="BTedit" (click)="openModalEdit(user)"><mat-icon>edit</mat-icon>	</button></td>
+      <td><button class="BTdelet"(click)="deleteGroup(user.id)"><mat-icon>delete</mat-icon></button></td>
+    </tr>
+</table>
